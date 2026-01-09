@@ -19,9 +19,9 @@ import React from "react";
            <h1>{productName}</h1>
            <p>{productDesription}</p>
            <div>
-             <a href={tryDemo}>Try Demo</a>
-             <a href={learnMore} style={{ marginLeft: "50px" }}>
-               Learn More
+             <a href={tryDemo}style={{textDecoration:"none"}}>Try Demo  <i className="fa fa-arrow-right"></i></a>
+             <a href={learnMore} style={{ marginLeft: "50px", textDecoration:"none" }}>
+               Learn More  <i className="fa fa-arrow-right"></i>
              </a>
            </div>
            <div className="mt-3">

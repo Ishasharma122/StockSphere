@@ -31,8 +31,8 @@ import React from "react";
            </p>
            <p>Playing basketball is his zen.</p>
            <p>
-             Connect on <a href="">Homepage</a> / <a href="">TradingQnA</a> /{" "}
-             <a href="">Twitter</a>
+             Connect on <a href="" style={{textDecoration:"none"}}>Homepage</a> / <a href=""style={{textDecoration:"none"}}>TradingQnA</a> /{" "}
+             <a href=""style={{textDecoration:"none"}}>Twitter</a>
            </p>
          </div>
        </div>

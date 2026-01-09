@@ -8,7 +8,7 @@ import React from "react";
            <h1>{productName}</h1>
            <p>{productDesription}</p>
            <div>
-             <a href={learnMore}>Learn More</a>
+             <a href={learnMore} style={{textDecoration:"none"}} > Learn More <i className="fa fa-arrow-right"></i></a>
            </div>
          </div>
          <div className="col-6 ">

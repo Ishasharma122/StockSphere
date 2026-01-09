@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
  
  function Universe() {
+  const navigate = useNavigate();
+
+  const handleSignUpClick = () => {
+    navigate("/signup");
+  };
    return (
      <div className="container mt-5 mb-5 ">
        <div className="row text-center">
@@ -34,12 +40,14 @@ import React from "react";
            <img src=" media/dittoLogo.png" style={{width :"200px",height:"100px" }} />
            <p className="text-small text-muted">Personalized advice on life and health insurance.No spam and no mis-selling.</p>
          </div>
-         <button
-           className="p-2 btn btn-primary fs-5 mb-5"
-           style={{ width: "20%", margin: "0 auto" }}
-         >
-           Signup Now
-         </button>
+     <button
+          className="p-2 btn btn-primary fs-5 mb-5"
+          style={{ width: "20%", margin: "0 auto" }}
+
+          onClick={handleSignUpClick} 
+        >
+          Sign up Now
+        </button>
        </div>
      </div>
    );

@@ -29,15 +29,21 @@ function Stats() {
           </p>
         </div>
         <div className="col-6 p-5">
-          <img src="media/ecosystem.png" style={{ width: "90%" }} />
+          <img
+            src="media/ecosystem.png"
+            alt="Zerodha ecosystem"
+            style={{ width: "90%" }}
+          />
           <div className="text-center">
-            <a href="" className="mx-5" style={{ textDecoration: "none" }}>
-              Explore our products{" "}
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <a
+              href="#"
+              className="mx-5"
+              style={{ textDecoration: "none" }}
+            >
+              Explore our products <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="" style={{ textDecoration: "none" }}>
-              Try Kite demo{" "}
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <a href="#" style={{ textDecoration: "none" }}>
+              Try Kite demo <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>

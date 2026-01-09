@@ -6,6 +6,7 @@ import Stats from "./Stats";
 import Pricing from "./Pricing";
 import Education from "./Education";
 import OpenAccount from "../OpenAccount";
+import Home from "./Home";
 
 function HomePage() {
   return (
@@ -16,6 +17,7 @@ function HomePage() {
       <Pricing />
       <Education />
       <OpenAccount />
+      <Home />
     </>
   );
 }

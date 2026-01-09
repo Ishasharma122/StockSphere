@@ -102,6 +102,19 @@ code {
   align-items: center;
   justify-content: space-between;
 }
+.btn-red {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+.btn-red:hover {
+    background-color: #c82333 !important;
+}
+
+.btn-red:disabled {
+    background-color: #e4606d !important;
+    cursor: not-allowed;
+}
 
 .table .data > * {
   margin-bottom: 5%;
@@ -138,7 +151,7 @@ code {
   color: #c9c9c9;
 }
 
-/* sudo selectors */
+
 .btn-blue:hover {
   background: #74a7fa;
 }
@@ -244,7 +257,6 @@ code {
   color: rgb(72, 194, 55);
 }
 
-/* sudo selector */
 .item:hover {
   cursor: pointer;
 }
@@ -324,7 +336,7 @@ hr {
   font-weight: 300;
 }
 
-/* sudo selectors */
+
 
 .menu:hover {
   color: rgb(245, 104, 52);
@@ -472,7 +484,7 @@ hr {
   color: rgb(72, 194, 55);
 }
 
-/* sudo selector */
+
 .item:hover {
   cursor: pointer;
 }
@@ -627,7 +639,6 @@ hr {
   color: rgb(146, 146, 146);
 }
 
-/* sudo selectors */
 .index:hover {
   cursor: pointer;
 }
@@ -802,7 +813,6 @@ hr {
   color: rgb(105, 105, 105);
 }
 
-/* sudo selectors */
 .search:focus {
   outline: none;
 }
@@ -817,7 +827,6 @@ hr {
   cursor: move;
 }
 
-/* TODO */
 .list li::before {
   content: "";
   background: transparent;

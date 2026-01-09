@@ -9,7 +9,7 @@ import React from "react";
              <h3 className="fs-5">Brokerage calculator</h3>
            </a>
            <ul
-             style={{ textAlign: "left", lineHeight: "2.5", fontSize: "12px" }}
+             style={{ textAlign: "left", lineHeight: "2.5", fontSize: "15px" }}
              className="text-muted"
            >
              <li>
