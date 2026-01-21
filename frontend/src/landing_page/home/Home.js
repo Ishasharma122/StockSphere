@@ -38,7 +38,7 @@ const Home = () => {
           removeCookie("token");
           localStorage.removeItem("isLoggedIn");
           localStorage.removeItem("showWelcomeToast");
-          navigate("/login");
+          navigate("/");
         }
       } catch (error) {
         console.error("Authentication check failed:", error);
