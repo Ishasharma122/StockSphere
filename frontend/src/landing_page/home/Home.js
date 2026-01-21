@@ -9,12 +9,11 @@ const Home = () => {
   const [cookies, removeCookie] = useCookies([]);
   const [username, setUsername] = useState("");
 
-  const isLoggedIn = localStorage.getItem("isLoggedIn"); 
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
 
   useEffect(() => {
     const verifyCookie = async () => {
-
-      if (!isLoggedIn) { 
+      if (!cookies.token) {
         navigate("/login");
         return;
       }
@@ -23,29 +22,37 @@ const Home = () => {
         const { data } = await axios.post(
           "https://stocksphere-backend-nhsr.onrender.com",
           {},
-          { withCredentials: true }
+          { withCredentials: true },
         );
 
         const { status, user } = data;
 
         if (status) {
           setUsername(user);
-          toast(`Hello ${user}`, { position: "top-right" });
+          const showToast = localStorage.getItem("showWelcomeToast");
+          if (!showToast) {
+            toast(`Hello ${user}`, { position: "top-right" });
+            localStorage.setItem("showWelcomeToast", "true");
+          }
         } else {
           removeCookie("token");
-          localStorage.removeItem("isLoggedIn");
           navigate("/login");
         }
       } catch (error) {
         console.error("Authentication check failed:", error);
         removeCookie("token");
-        localStorage.removeItem("isLoggedIn");
         navigate("/login");
       }
     };
-
     verifyCookie();
-  }, [isLoggedIn, navigate, removeCookie]);
+  }, [cookies, navigate, removeCookie]);
+
+  const logout = () => {
+    removeCookie("token");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("showWelcomeToast");
+    navigate("/login");
+  };
 
   return (
     <>
