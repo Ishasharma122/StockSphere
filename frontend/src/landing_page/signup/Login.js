@@ -45,17 +45,21 @@ const Login = () => {
       const { success, message } = data;
 
       if (success) {
+        localStorage.setItem("isLoggedIn", "true"); 
+
         handleSuccess(message);
         setInputValue({
           email: "",
           password: "",
         });
+
         setTimeout(() => {
           navigate("/");
-        }, 1000);
+        }, 500);
       } else {
         handleError(message);
       }
+
     } catch (error) {
       console.error(error);
       handleError("Something went wrong!");
@@ -75,7 +79,6 @@ const Login = () => {
             value={email}
             placeholder="Enter your email"
             onChange={handleOnChange}
-            autoComplete="email"
             required
           />
         </div>
@@ -89,7 +92,6 @@ const Login = () => {
             value={password}
             placeholder="Enter your password"
             onChange={handleOnChange}
-            autoComplete="current-password"
             required
           />
         </div>
