@@ -1,4 +1,4 @@
-#  StockSphere – Full Stack Trading Platform
+# 📊 StockSphere – Full Stack Trading Platform
 
 A **full-stack stock trading platform** inspired by Zerodha, built to understand how **real trading systems, dashboards, and authentication flows** work in production applications.
 
@@ -6,31 +6,31 @@ This project includes a **marketing website, authentication system, and protecte
 
 ---
 
-##  Features
+## ✨ Features
 
-###  Authentication
+### 🔐 Authentication
 - User Signup & Login
 - JWT-based authentication
 - Secure cookies using `httpOnly`
 - Protected routes using token verification
 
-###  Landing Website
+### 🌐 Landing Website
 - Home, About, Products, Pricing, Support pages
-- Responsive UI using Bootstrap
-- Real Zerodha-inspired design & layout
+- Responsive UI using Bootstrap 📱💻
+- Real Zerodha-inspired design & layout 🎨
 - Call-to-Action flows (Sign up buttons across pages)
 
-###  Trading Dashboard 
+### 📊 Trading Dashboard 
 - Auth-protected dashboard entry
 - Portfolio & trading components
-- Order placement (Buy / Sell)
-- Holdings & Positions tracking
+- Order placement (Buy / Sell) 💸
+- Holdings & Positions tracking 📈📉
 
 ---
 
-##  Tech Stack
+## 🛠️ Tech Stack
 
-### Frontend
+### 🎨 Frontend
 - React 19
 - React Router DOM
 - Axios
@@ -39,7 +39,7 @@ This project includes a **marketing website, authentication system, and protecte
 - Context API
 - CSS (custom + utility styling)
 
-### Backend
+### ⚙️ Backend
 - Node.js
 - Express.js
 - MongoDB & Mongoose
@@ -48,7 +48,7 @@ This project includes a **marketing website, authentication system, and protecte
 - Cookie-based sessions
 
 ---
-##  API Endpoints (Backend)
+## 🔗 API Endpoints (Backend)
 
 | Method | Endpoint | Description |
 |------|--------|-------------|
@@ -59,7 +59,7 @@ This project includes a **marketing website, authentication system, and protecte
 | GET | /allPositions | Fetch positions |
 | POST | /newOrder | Place Buy/Sell order |
 
-##  Local Setup
+## 💻 Local Setup
 
 ### Backend
 
