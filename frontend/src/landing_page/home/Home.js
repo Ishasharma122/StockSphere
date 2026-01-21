@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     const verifyCookie = async () => {
-      if (!cookies.token) {
+      if (!isLoggedIn) {
         navigate("/login");
         return;
       }
@@ -32,27 +32,25 @@ const Home = () => {
           const showToast = localStorage.getItem("showWelcomeToast");
           if (!showToast) {
             toast(`Hello ${user}`, { position: "top-right" });
-            localStorage.setItem("showWelcomeToast", "true");
+            localStorage.setItem("showWelcomeToast", "true"); 
           }
         } else {
           removeCookie("token");
+          localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem("showWelcomeToast");
           navigate("/login");
         }
       } catch (error) {
         console.error("Authentication check failed:", error);
         removeCookie("token");
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("showWelcomeToast");
         navigate("/login");
       }
     };
-    verifyCookie();
-  }, [cookies, navigate, removeCookie]);
 
-  const logout = () => {
-    removeCookie("token");
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("showWelcomeToast");
-    navigate("/login");
-  };
+    verifyCookie();
+  }, [isLoggedIn, navigate, removeCookie]);
 
   return (
     <>
