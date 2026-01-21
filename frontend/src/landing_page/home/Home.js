@@ -18,7 +18,7 @@ const Home = () => {
       
       try {
           const { data } = await axios.post(
-            "http://localhost:3002",
+            "https://stocksphere-backend-nhsr.onrender.com",
             {},
             { withCredentials: true }
           );

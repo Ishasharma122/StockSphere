@@ -5,7 +5,7 @@ function OpenAccount() {
   const navigate = useNavigate();
 
   const handleSignUpClick = () => {
-    navigate("/signup"); // Redirects the user to the /signup route
+    navigate("/signup"); 
   };
   return (
     <div className="container p-5 mb-5">
