@@ -10,7 +10,7 @@ const SellActionWindow = ({ uid }) => {
     const stockName = uid;
 
     const handleSellClick = () => {
-        axios.post("http://localhost:3002/newOrder", {
+        axios.post("https://stocksphere-backend-nhsr.onrender.com/newOrder", {
             name: stockName,
             qty: stockQuantity,
             mode: "SELL", 
