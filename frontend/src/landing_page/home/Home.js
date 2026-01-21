@@ -7,45 +7,50 @@ import { ToastContainer, toast } from "react-toastify";
 const Home = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
-  const [username, setUsername] = useState(""); 
-  
+  const [username, setUsername] = useState("");
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn"); 
+
   useEffect(() => {
     const verifyCookie = async () => {
-      if (!cookies.token) {
+
+      if (!isLoggedIn) { 
         navigate("/login");
-        return; 
+        return;
       }
-      
+
       try {
-          const { data } = await axios.post(
-            "https://stocksphere-backend-nhsr.onrender.com",
-            {},
-            { withCredentials: true }
-          );
-          
-          const { status, user } = data;
-          
-          if (status) {
-              setUsername(user);
-              toast(`Hello ${user}`, {
-                  position: "top-right",
-              });
-          } else {
-              removeCookie("token");
-              navigate("/login");
-          }
-      } catch (error) {
-          console.error("Authentication check failed:", error);
+        const { data } = await axios.post(
+          "https://stocksphere-backend-nhsr.onrender.com",
+          {},
+          { withCredentials: true }
+        );
+
+        const { status, user } = data;
+
+        if (status) {
+          setUsername(user);
+          toast(`Hello ${user}`, { position: "top-right" });
+        } else {
           removeCookie("token");
+          localStorage.removeItem("isLoggedIn");
           navigate("/login");
+        }
+      } catch (error) {
+        console.error("Authentication check failed:", error);
+        removeCookie("token");
+        localStorage.removeItem("isLoggedIn");
+        navigate("/login");
       }
     };
+
     verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+  }, [isLoggedIn, navigate, removeCookie]);
 
   return (
     <>
       <ToastContainer />
+      <h1>Welcome {username}</h1>
     </>
   );
 };
