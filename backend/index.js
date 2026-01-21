@@ -16,10 +16,13 @@ require("dotenv").config();
  const uri = process.env.MONGO_URL;
  
  const app = express();
- 
+ const allowedOrigins = [
+  "https://stocksphere-frontend.onrender.com",
+   "https://stocksphere-dashboard-ko13.onrender.com"
+];
  app.use(
   cors({
-    origin: ["http://localhost:3000"], 
+    origin:  allowedOrigins, 
     methods: "GET,POST,PUT,DELETE",
     credentials: true, 
   })
